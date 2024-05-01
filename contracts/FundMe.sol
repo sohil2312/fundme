@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.8;
-
+import "hardhat/console.sol";
 import "@chainlink/contracts/src/v0.8/shared/interfaces/AggregatorV3Interface.sol";
 import "./PriceConverter.sol";
 
@@ -29,11 +29,7 @@ contract FundMe {
         funders.push(msg.sender);
     }
     
-    function getVersion() public view returns (uint256){
-        // ETH/USD price feed address of Sepolia Network.
-        AggregatorV3Interface priceFeed = AggregatorV3Interface(0x694AA1769357215DE4FAC081bf1f309aDC325306);
-        return priceFeed.version();
-    }
+    
     
     modifier onlyOwner {
         // require(msg.sender == owner);
@@ -68,12 +64,15 @@ contract FundMe {
     //  /        \
     //receive()  fallback()
 
-    fallback() external payable {
-        fund();
-    }
 
-    receive() external payable {
-        fund();
+    function getPriceFeed() public view returns (AggregatorV3Interface) {
+        return priceFeed;
+    }
+    function getAddressToAmountFunded(address fundingAddress) public view returns(uint256){
+        return addressToAmountFunded[fundingAddress];
+    }
+    function getFundersArray() public view returns(address[] memory){
+        return funders;
     }
 
 }
