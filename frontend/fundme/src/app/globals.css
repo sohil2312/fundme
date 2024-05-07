@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.bodyFundMe{
+  background-color: orange;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 500px;
+  flex-direction: column;
+}
+.fundMebtn{
+  background-color: white;
+  padding: 10px;
+  border-radius: 15%; 
+  margin: 10px; 
+}
+.Connect,.withdrawbtn{
+  background-color: white;
+  padding: 10px;
+  border-radius: 15%;
+  margin: 10px;  
+}
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-left: 5px;
+}
+
+.green {
+  background-color: green;
+}
+.red{
+  background-color: red;
+}
+.balanceTab{
+  height: 10%;
+  width: 20%;
+  background-color: white;
+  border-radius: 10%;
+  padding: 20px;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+}
+.inpEth{
+  border-radius: 10px;
+  height: 50%;
+  padding: 10px;
+}
+LoadingAnimation{
+  color: green;
+  background-color: aqua;
+}

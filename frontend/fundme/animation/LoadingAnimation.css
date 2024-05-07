@@ -1,0 +1,25 @@
+.loading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .loading-spinner {
+    border: 0.25em solid rgba(0, 0, 0, 0.1); /* Adjust the thickness as needed */
+  border-left-color: #7986cb;
+  border-radius: 50%;
+  width: 70%; /* Adjust the size as a percentage of the parent element */
+  padding-top: 70%; /* Maintain aspect ratio for a circle */
+  animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
